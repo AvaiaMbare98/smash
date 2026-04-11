@@ -14,7 +14,7 @@ int main(int argc, char **argv){
 
 void smash_loop(){
     char* line;
-    char** args;
+    tokenized_line args;
 
     do {
         printf("> ");
@@ -22,7 +22,7 @@ void smash_loop(){
         args = arg_parser(line);
 
         free(line);
-        free(args);
+        free(&args);
     }while(1);
 
 }
