@@ -5,11 +5,12 @@
 
 #define INITIAL_BUFSIZE 8
 
-char** arg_parser(char* line){
+tokenized_line arg_parser(char* line){
     int bufsize = INITIAL_BUFSIZE;
-    char** tokenized_args = malloc(bufsize * sizeof(char));
+    tokenized_line tok_line;
+    tok_line.args = malloc(bufsize * sizeof(char));
 
     // applicare strtok a line
 
-    return tokenized_args;
+    return tok_line;
 }
