@@ -22,7 +22,7 @@ void smash_loop(){
         args = arg_parser(line);
 
         free(line);
-        free(&args);
+        free(args.args);
     }while(1);
 
 }
