@@ -7,6 +7,16 @@
 #define TOK_DELIMETER " \n\t\a\r"
 
 tokenized_line arg_parser(char* line){
+    if(line == NULL){
+        tokenized_line tok_line;
+        tok_line.memory = INITIAL_BUFSIZE;
+        tok_line.args = malloc(tok_line.memory * sizeof(char*));
+        tok_line.args[0] = NULL;
+        tok_line.num = 0;
+
+        return tok_line;
+    }
+
     tokenized_line tok_line;
     tok_line.memory = INITIAL_BUFSIZE;
     tok_line.args = malloc(tok_line.memory * sizeof(char*));
