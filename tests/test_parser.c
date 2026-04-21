@@ -39,3 +39,7 @@ Test(test_parser, memory_test){
 
     cr_assert(eq(int, tok_line.num, 10));
 }
+
+Test(test_parser, null_input){
+    cr_assert(eq(ptr, arg_parser(NULL).args[0], NULL));
+}
