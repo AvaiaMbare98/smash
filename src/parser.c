@@ -12,7 +12,6 @@ tokenized_line arg_parser(char* line){
     tok_line.args = malloc(tok_line.memory * sizeof(char*));
     tok_line.num = 0;
     char* token;
-    printf("%s", line);
 
     if(!tok_line.args){
         fprintf(stderr, "Mem allocation error.");
@@ -39,6 +38,12 @@ tokenized_line arg_parser(char* line){
         token = strtok(NULL, TOK_DELIMETER);
     }
     tok_line.args[tok_line.num] = NULL;
+
+    tok_line.memory = tok_line.num + 1; 
+    tok_line.args = realloc( // no waste of space :)
+        tok_line.args,
+        tok_line.memory * sizeof(char*)
+    );
 
     return tok_line;
 }
