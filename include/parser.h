@@ -3,7 +3,7 @@
 
 typedef struct tokenized_line{
     char** args; // the arguments of the command
-    int args_count; // number of arguments
+    int num; // number of arguments
     int memory; // how much memory have we allocated?
 } tokenized_line;
 

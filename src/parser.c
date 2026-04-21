@@ -10,7 +10,7 @@ tokenized_line arg_parser(char* line){
     tokenized_line tok_line;
     tok_line.memory = INITIAL_BUFSIZE;
     tok_line.args = malloc(tok_line.memory * sizeof(char*));
-    tok_line.args_count = 0;
+    tok_line.num = 0;
     char* token;
     printf("%s", line);
 
@@ -21,10 +21,10 @@ tokenized_line arg_parser(char* line){
 
     token = strtok(line, TOK_DELIMETER);
     while(token != NULL){
-        tok_line.args[tok_line.args_count] = token;
-        tok_line.args_count++;
+        tok_line.args[tok_line.num] = token;
+        tok_line.num++;
 
-        if(tok_line.args_count >= tok_line.memory){ // memory has run out!
+        if(tok_line.num >= tok_line.memory){ // memory has run out!
             tok_line.memory *= 2;
             tok_line.args = realloc( // more space for args
                 tok_line.args, 
@@ -38,7 +38,7 @@ tokenized_line arg_parser(char* line){
         }
         token = strtok(NULL, TOK_DELIMETER);
     }
-    tok_line.args[tok_line.args_count] = NULL;
+    tok_line.args[tok_line.num] = NULL;
 
     return tok_line;
 }
