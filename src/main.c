@@ -3,6 +3,7 @@
 #include <string.h>
 #include <unistd.h> // library for POSIX syscalls
 #include "parser.h"
+#include "executor.h"
 
 char* read_line();
 void smash_loop();
@@ -15,15 +16,17 @@ int main(int argc, char **argv){
 void smash_loop(){
     char* line;
     tokenized_line args;
+    int status;
 
     do {
         printf("> ");
         line = read_line(); 
         args = arg_parser(line);
+        process_executor(args.args);
 
         free(line);
         free(args.args);
-    }while(1);
+    }while(status);
 
 }
 
