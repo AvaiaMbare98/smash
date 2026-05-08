@@ -17,12 +17,19 @@ void smash_loop(){
     char* line;
     tokenized_line args;
     int status;
+    char cwd[1024]; // buffer for the current working directory
 
     do {
-        printf("> ");
+        if(getcwd(cwd, sizeof(cwd)) != NULL){
+            printf("%s >", cwd);
+        } else{
+            perror("getcwd error");
+            printf("> ");
+        }
+
         line = read_line(); 
         args = arg_parser(line);
-        process_executor(args.args);
+        status = process_executor(args.args);
 
         free(line);
         free(args.args);
