@@ -37,7 +37,7 @@ run_test() {
 
 run_test "BASE - Print working directory" "pwd"
 
-if [ $failed_tests -gt 0 ]; then # -gtis equivalent to ">" in C
+if [ $failed_tests -gt 0 ]; then # -gt is equivalent to ">" in C
     echo "$failed_tests tests failed."
     exit 1
 else

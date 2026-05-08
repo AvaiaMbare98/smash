@@ -1,9 +1,0 @@
-#include "launch.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
-
-int launch(char** args){
-
-}
