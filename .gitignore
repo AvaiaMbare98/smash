@@ -59,3 +59,4 @@ build/
 # Ignore compiled executables
 smash
 test_runner
+unit_tests
