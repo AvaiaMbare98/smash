@@ -5,10 +5,11 @@ Smash (SMAll SHell) is a lightweight Unix shell written in C. It's a personal pr
 Smash exists just as a learning project. Building Smash, I'm learning to:
 * **Refresh** my C programming skills
 * **Build** Unit and End-To-End tests using a TDD approach
-* **Use** external frameworks such as Criterion
+* **Integrate** external frameworks such as Criterion
 * **Write** bash scripts (I never wrote one before!)
-* **Use** POSIX system calls, building something practical on top of the OS theory I study at university
+* **Apply** POSIX system calls, building something practical on top of the OS theory I study at university
 * **Use** generative AI as a learning partner in a responsible and constructive manner
+* **Master** version control discipline with Git and GitHub, structuring a clean history through atomic commits rather than just "saving my work"
 
 ## A quick note
 
